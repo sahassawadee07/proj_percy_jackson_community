@@ -1,0 +1,1497 @@
+[disableleft]
+<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/dalek">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+ 
+<!-- java -->
+ 
+ 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Open modal on button click
+    document.querySelectorAll(".map-point-gif").forEach(function(button) {
+      button.addEventListener("click", function() {
+        // Show the modal by adding the 'model-open' class
+        document.querySelector(".custom-model-main").classList.add("model-open");
+ 
+        // Set content dynamically based on the button clicked
+        var buttonId = this.id;
+ 
+        // Update modal content based on the button clicked
+        if (buttonId === "atlantic-ocean") {
+          document.getElementById("popup-title").textContent = "DI IMMORTALES!";
+          document.getElementById("popup-content").innerHTML = `
+  <p>Welcome to the mighty Atlantic Ocean, where the waves crash with the power of Poseidon’s temper tantrums! Just remember, if you see a trident-wielding figure, it’s probably best not to ask him about his hair—he’s a <em>little touchy</em> about it!</p>
+  <br>
+  <div class="separate-po">@</div>
+  <p><a href="https://percyjackson.mooorp.com/thread/379/1/1" target="_blank">Golden Automatons : Ruins of Ancient Sacred Sites</a></p>
+  `;
+        } else if (buttonId === "yothanheim") {
+          document.getElementById("popup-title").textContent = "DI IMMORTALES!";
+          document.getElementById("popup-content").innerHTML = `
+  <p>You have now entered a special area within the realm of Yothanheim, the land of icy mountains and frost giants, where Loki might feel right at home... (even if home didn’t invite him)!</p>
+  <br>
+  <div class="separate-po">@</div>
+  <p><a href="https://percyjackson.mooorp.com/thread/379/1/1" target="_blank">Golden Automatons : Ruins of Ancient Sacred Sites</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/288/1/2" target="_blank">Golem</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/280/1/2" target="_blank">Son of Fenrir</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/305/1/2" target="_blank">Wolf Ice</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/256/1/2" target="_blank">Ymir</a></p>
+`;
+        } else if (buttonId === "arctic") {
+          document.getElementById("popup-title").textContent = "DI IMMORTALES!";
+          document.getElementById("popup-content").innerHTML = `
+  <p>Step into the Arctic, where the snow is endless, the cold is fierce, and even polar bears judge your wardrobe! And if you hear a growl, it’s probably Hrimthursar, the giant of ice, upset he wasn’t invited to the warm party!</p>
+  <br>
+  <div class="separate-po">@</div>
+  <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/379/1/1" target="_blank">Golden Automatons : Ruins of Ancient Sacred Sites</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/288/1/2" target="_blank">Golem</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/430/1/1" target="_blank">Star Spawn</a></p>
+`;
+        } else if (buttonId === "desert") {
+          document.getElementById("popup-title").textContent = "DI IMMORTALES!";
+          document.getElementById("popup-content").innerHTML = `
+  <p>Welcome to the Desert of Desolation, where the sun blazes and even camels are questioning life choices! And if you spot a mirage, don’t get too excited—it’s probably just Ra, the sun god, playing tricks on you!</p>
+  <br>
+  <div class="separate-po">@</div>
+  <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur : Across Africa</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/379/1/1" target="_blank">Golden Automatons : Ruins of Ancient Sacred Sites</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/288/1/2" target="_blank">Golem</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/310/1/2" target="_blank">Jinn : Across Africa and Arab world</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/430/1/1" target="_blank">Star Spawn</a></p>
+  `;
+        } else if (buttonId === "hell") {
+          document.getElementById("popup-title").textContent = "DI IMMORTALES!";
+          document.getElementById("popup-content").innerHTML = `
+  <p>Welcome to the Underworld, where shadows whisper and Cerberus guards the gates. He’s territorial, so unless you’ve got treats, you might want to keep your distance!</p>
+  <br>
+  <div class="separate-po">@</div>
+  <p><a href="https://percyjackson.mooorp.com/thread/403/1/1" target="_blank">Hellhound</a></p>
+  `;
+        } else if (buttonId === "asian") {
+          document.getElementById("popup-title").textContent = "DI IMMORTALES!";
+          document.getElementById("popup-content").innerHTML = `
+  <p>Welcome to the land of the Rising Sun, where ancient wisdom meets vibrant cultures, and every sunrise brings new possibilities. Let the journey begin!</p>
+  <br>
+  <div class="separate-po">@</div>
+  <p><a href="https://percyjackson.mooorp.com/thread/379/1/1" target="_blank">Golden Automatons : Ruins of Ancient Sacred Sites, Across Asia (excluding China)</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/288/1/2" target="_blank">Golem</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/350/1/1" target="_blank">Raksha : Across Asia</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/430/1/1" target="_blank">Star Spawn : Ancient ruins</a></p>
+  `;
+        }  else if (buttonId === "USA") {
+          document.getElementById("popup-title").textContent = "DI IMMORTALES!";
+          document.getElementById("popup-content").innerHTML = `
+  <p>Welcome to the USA, where the ancient flames of civilization continue to burn brightly, lighting the path to a future built on history, innovation, and endless possibility.</p>
+  <br>
+  <div class="separate-po">@</div>
+  <br>
+  <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/184/1/3" target="_blank">Alghoul : Worldwide (Cemetery)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/258/1/2" target="_blank">Chimera : Worldwide (Excluding Long Island)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/192/1/3" target="_blank">Colchis Bulls : Worldwide (Around the city, Dairy farm, The forbidden forest)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/272/1/2" target="_blank">Cyclops : Worldwide</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/401/1/1" target="_blank">Deathmachine : Across America (Impersonators of police/military)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/238/1/3" target="_blank">Dreaming Iguana : Worldwide (A home where children dream in peace)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/397/1/1" target="_blank">Empusa : Night club</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/297/1/2" target="_blank">Ghoul : Worldwide (Nighttime in graveyards and cemeteries / A site of mass fatalities)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/95/1/3" target="_blank">Goblin : Worldwide</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/546/1/1" target="_blank">Gorgons : Worldwide (Excluding New York)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/395/1/1" target="_blank">Karkinos : Worldwide (along coastlines and seafood restaurants)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/88/1/3" target="_blank">Harpy : Worldwide</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/253/1/3" target="_blank">Hydra : Worldwide (Excluding Long Island)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/338/1/1" target="_blank">Imp : Rural villages in America</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/375/1/1" target="_blank">Jackalope : National Parks</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/405/1/1" target="_blank">Lamia : Worldwide (Excluding New York)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/299/1/2" target="_blank">Leprechaun : Across America</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/284/1/2" target="_blank">Melusine : Across America</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/187/1/3" target="_blank">Minotaur : Worldwide (Abandoned tunnel, Labyrinthine location, Dairy farm)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/205/1/3" target="_blank">Nemean : Worldwide (Excluding Long Island)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/402/1/1" target="_blank">Naiad : Worldwide(The rivers)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/351/1/1" target="_blank">Pukwudgie : Across America</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/260/1/2" target="_blank">Sphinx : Worldwide (Excluding Long Island)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/186/1/3" target="_blank">Troll : Worldwide (The Cavern, Drainage tunnel, Abandoned building, The forbidden forest)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/271/1/2" target="_blank">Van Meter : Across America (Excluding Long Island)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Across America (Dense forest)</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/185/1/3" target="_blank">Wolf of Ares (Wolf pack) : Worldwide</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/185/1/3" target="_blank">Wolf of Ares (Lone Wolf) : Worldwide</a></p>
+  `;
+        } else if (buttonId === "europe") {
+          document.getElementById("popup-title").textContent = "DI IMMORTALES!";
+          document.getElementById("popup-content").innerHTML = `
+  <p>Welcome to Europe, where dragons still think they’re the coolest creatures around—just don’t ask them for directions, they’re still figuring out the map!</p>
+  <br>
+  <div class="separate-po">@</div>
+  <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur : Across Europe (Mainland areas only)</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/379/1/1" target="_blank">Golden Automatons : Ruins of Ancient Sacred Sites (Across Europe)</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/288/1/2" target="_blank">Golem</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/299/1/2" target="_blank">Leprechaun : Across Europe</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/284/1/2" target="_blank">Melusine : Across Europe</a></p>
+  <p><a href="https://percyjackson.mooorp.com/thread/430/1/1" target="_blank">Star Spawn : Ancient ruins</a></p>
+  `;
+        }
+      });
+    });
+ 
+    // Close modal on close button or background overlay click
+    document.querySelectorAll(".close-btn, .bg-overlay").forEach(function(closeElement) {
+      closeElement.addEventListener("click", function() {
+        // Hide the modal by removing the 'model-open' class
+        document.querySelector(".custom-model-main").classList.remove("model-open");
+      });
+    });
+  });
+</script>
+ 
+ 
+  
+<style>
+        /* Outside box style*/
+    #boxHMborder01 {
+      padding: 2px;
+      border: 5px solid transparent;
+      border-radius: 20px;
+      border-image: transparent;
+      background-clip: padding-box;
+      color: transparent;
+      filter: drop-shadow(5px 15px 15px #000);
+      transform-origin: top;
+      background-color:transparent ;
+      position: relative;
+    }
+    #boxHMborder01::after {
+      position: absolute;
+      top: -5px; bottom: -5px;
+      left: -5px; right: -5px;
+      background: repeating-linear-gradient(105deg,
+                    #181617 0%,    /* Start with dark gray/black */
+                    #ad1718 5%,    /* Transition to red */
+                    #ffdad8 8%,    /* Transition to soft red/white */
+                    #ad1718 10%,   /* Transition back to red */
+                    #181617 15%    /* Transition back to dark gray/black */
+                  );
+      content: '';
+      z-index: -1;
+      border-radius: 20px;
+    }
+      
+    .bgimg-1 {
+      background-position: center;
+      background-repeat: repeat;
+      border-radius: 10px;
+        
+    }
+      
+    .bgimg-2 {
+      width: 500px;
+      height: auto;
+      opacity: 0.7;
+      border-radius: 20px;
+    }
+  
+    .bgimg-2 img {
+      height: auto;
+      width: 100%;
+      transition: transform 1s, border-radius 1s;
+    }
+  
+    .bgimg-2:hover img {
+      transform: scale(1.2);
+    }
+      
+    .header-style {
+      text-align: center;
+      font-family: 'Dalek', sans-serif !important;
+      font-size: 40px;
+      background: -webkit-repeating-linear-gradient(105deg,
+                    #3c0001 0%,    /* Start with dark red */
+                    #ad1718 5%,    /* Transition to red */
+                    #ffdad8 8%,    /* Transition to soft red/white */
+                    #ad1718 10%,   /* Transition back to red */
+                    #3c0001 15%    /* Transition back to dark red */
+                  );
+                            -webkit-background-clip: text;
+                           -webkit-text-fill-color: transparent;
+       text-shadow: 4px 4px 0px rgba(255, 255, 255, 1);
+    }
+      
+    .separate-style {
+      text-align: center;
+      font-family: 'Dalek', sans-serif !important;
+      font-size: 25px;
+      background: -webkit-repeating-linear-gradient(105deg,
+                    #3c0001 0%,    /* Start with dark red */
+                    #ad1718 5%,    /* Transition to red */
+                    #ffdad8 8%,    /* Transition to soft red/white */
+                    #ad1718 10%,   /* Transition back to red */
+                    #3c0001 15%    /* Transition back to dark red */
+                  );
+                            -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+    }
+    /* only for pop-up separate */
+    .separate-po {
+      text-align: center;
+      font-family: 'Dalek', sans-serif; 
+      font-size: 25px;
+      background: -webkit-repeating-linear-gradient(105deg, #ffb338 0%, #3e2904 5%, #ffb338 12%);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+    }
+     
+    .title-style {
+      text-align: center;
+      font-family: IrisUPC; 
+      font-size: 30px;
+      font-weight: bold;
+      font-style: italic;
+      background: -webkit-repeating-linear-gradient(105deg,
+                    #605a5a 0%,
+                    #ffffff 5%,
+                    #ffffff 10%,
+                    #605a5a 30%
+                  );
+                            -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+      
+    }
+    .text-style {
+      text-align: left;
+      font-family: Cordia New;
+      font-size: 25px;
+      color: white;
+    }
+      
+    .pin-style {
+      display: inline-flex;         /* Make both <div> and <span> inline-flex */
+      font-family: 'Dalek', sans-serif !important;  /* Font styling */
+      font-size: 20px;              /* Font size */
+      margin: 0;                    /* Remove default margin */
+      align-items: center;          /* Vertically align text */
+      margin-right: 10px;           /* Add spacing between @ and Las Vegas */
+      font-weight: bold;
+    }
+  
+    span {
+      display: inline-flex;         /* Ensure <span> behaves similarly */
+      font-size: 18px;
+      align-items: center;
+    }
+  
+      
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(transparent, #ad1718);
+      border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(transparent, #ffffff);
+    }
+      
+    /*Background Style*/
+    body {
+      background-image: url("https://i.imgur.com/pjqfBqe.gif");
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-color: black;
+    }
+      
+    /*Map Style*/
+    /*map point style*/
+    :root {
+      --color-background: rgb(0, 0, 0); 
+      --color-highlight: rgb(255, 179, 56);
+      --color-highlight-light: rgb(252, 252, 252); /* lighten by 10% */
+      --color-highlight-dark: rgb(252, 252, 252);  /* outside color : darken by 10% */ 
+      --color-foreground: rgb(255, 255, 255); /* invert(0, 0, 0) */
+      --map-dot-size: 15px;
+      --transition-time: 0.25s;
+    }
+          
+    /*id of dealer map*/
+    #dealer-map {
+      position: relative;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+  
+    #dealer-map img {
+      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      opacity: 0.8;
+      filter: brightness(85%);
+    }
+          
+    /*font management*/
+    #dealer-map h1, #dealer-map h2, #dealer-map h3, #dealer-map h4, #dealer-map h5, #dealer-map h6 {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+  
+    #dealer-map h1 { font-size: 25px; font-family: 'Dalek', sans-serif;}
+    #dealer-map h2 { font-size: 10pt; }
+    #dealer-map p {
+      font-size: 20px;
+      margin-bottom: 5px;
+      font-family: "Cordia New";
+      line-height: 1;
+    }
+  
+    #dealer-map strong {
+      font-weight: 900;
+      color: var(--color-foreground);
+    }
+  
+    #dealer-map a {
+      transition: color var(--transition-time) ease-in-out;
+      text-decoration: none;
+      color: var(--color-highlight-light);
+    }
+  
+    #dealer-map a:visited {
+      color: var(--color-highlight-light);
+    }
+  
+    #dealer-map li.active a,
+    #dealer-map a:hover,
+    #dealer-map a:active {
+      color: var(--color-foreground);
+    }
+  
+        /*map point action*/
+    .map-point {
+      cursor: pointer;
+      outline: none;
+      z-index: 0;
+      position: absolute;
+      width: var(--map-dot-size);
+      height: var(--map-dot-size);
+      border-radius: 2%; /* ใส่ความมนให้กรอบของ content */
+      opacity: 0.8;
+      transform: translate(-50%, -50%);
+      transition: opacity var(--transition-time) ease-in-out var(--transition-time), width var(--transition-time) ease-in-out var(--transition-time), height var(--transition-time) ease-in-out var(--transition-time), z-index var(--transition-time) ease-in-out var(--transition-time);
+      background: rgba(0, 0, 0, 0.85); /* transparentize(var(--color-background), 0.15) */
+      border: calc(var(--map-dot-size) / 8) solid var(--color-highlight-dark);
+    }
+  
+     /*map point box*/
+    .map-point .content {
+      position: relative;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity var(--transition-time) ease-in-out;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow-y: auto;
+      display: flex;
+      justify-content: center; /* Center text horizontally */
+      align-items: center;     /* Center text vertically */
+      text-align: center;      /* Ensure text is centered */
+  
+    }
+  
+    .map-point .content .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+        
+    }
+  
+    .map-point .content .centered-y {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+        
+    }
+  
+    .map-point:active, .map-point:focus {
+      margin: 0;
+      padding: 0;
+      opacity: 1;
+      width: 300px;
+      height: 450px;
+      color: var(--color-foreground);
+      z-index: 1;
+      transition: opacity var(--transition-time) ease-in-out, width var(--transition-time) ease-in-out, height var(--transition-time) ease-in-out;
+    }
+  
+    .map-point:active .content, .map-point:focus .content {
+      opacity: 1;
+      transition: opacity var(--transition-time) ease-in-out var(--transition-time), height 0 ease-in-out var(--transition-time), overflow 0 ease-in-out var(--transition-time);
+      overflow-y: auto;
+    }
+  
+    .map-point:active .content a:hover, .map-point:focus .content a:active {
+      color: var(--color-highlight);
+    }
+      
+    /*description box*/
+    .desc-box {
+      max-width: 50%;
+      padding: 1rem 2rem;
+      -webkit-backdrop-filter: blur(4px);
+      background-color: rgba(0, 0, 0, 0.1); 
+      backdrop-filter: blur(4px);
+      border-radius: 1rem;
+      text-align: justify;
+      overflow-y: auto;
+      height: 200px;
+    }
+      
+    /*gallery box*/
+    .gallery-box {
+      display: flex;                /* Use Flexbox to align images in a row */
+      justify-content: center; /* Add spacing between images */
+      align-items: center;          /* Center images vertically */
+      gap: 10px;                    /* Add consistent spacing between images */
+      padding: 1rem;                /* Optional padding for the container */
+      background-color: transparent;    /* Background color for the gallery */
+      border-radius: 5px;          /* Rounded corners for the gallery box */
+      width: fit-content; 
+    }
+  
+    .gallery-box img {
+      width: auto;   /* Each image takes up 1/3 of the row minus the gap */
+      height: 200px;                 /* Maintain aspect ratio */
+      border-radius: 8px;           /* Optional rounded corners for images */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
+      transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+      filter: brightness(0.9);
+        
+        
+    }
+  
+    .gallery-box img:hover {
+      transform: scale(1.05);       /* Slight zoom on hover */
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    }
+     
+    /* map-point GIF container */
+    .map-point-gif {
+        position: absolute;
+        cursor: pointer;
+        display: inline-block;
+        background: transparent;
+        border: none;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        padding: 0;
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+ 
+    /* GIF image style */
+    .map-point-gif .gif-image {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        transition: transform 0.2s;
+    }
+     
+    .map-point-gif .gif-image:hover {
+      transform: scale(1.1);
+    }
+     
+    /* Pop-up style for special place */
+    .custom-model-main {
+      text-align: center;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.15s linear, z-index 0.15s;
+    }
+ 
+    .model-open {
+      z-index: 9999;
+      opacity: 1;
+      overflow: hidden;
+    }
+ 
+    .custom-model-inner {
+      position: fixed; /*change position here*/
+      top: 10%; /*change position here*/
+      left: 50%; /**/
+      transform: translate(-50%); /*change position here*/
+      transition: transform 0.3s ease-out;
+      width: 320px;
+      margin: 30px auto;
+      max-width: 97%;
+    }
+ 
+    .custom-model-wrap {
+      display: block;
+      width: 100%;
+      background:black;
+      border-image: repeating-linear-gradient(105deg, #ffb338 0%, #3e2904 5%, #ffb338 12%)1;
+      border-color: transparent;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 6px;
+      padding: 20px;
+      box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+      max-height: calc(100vh - 70px);
+      overflow-y: auto;
+    }
+ 
+    .model-open .custom-model-inner {
+      position: fixed; /*change position here*/
+      top: 10%; /*change position here*/
+      left: 50%; /**/
+      transform: translate(-50%); /*change position here*/
+      z-index: 9999;
+    }
+    .bg-overlay {
+      background: transparent;
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      z-index: 99;
+      transition: background 0.15s linear;
+    }
+ 
+    .close-btn {
+      position: absolute;
+      right: 0;
+      top: -30px;
+      cursor: pointer;
+      font-size: 30px;
+      color: #fff;
+    }
+     
+    /*pop-up text style*/
+    .pop-up-content-wrap h2,
+    .pop-up-content-wrap p {
+      color: white; /* Makes text white */
+    }
+     
+</style>
+  
+<div id="boxHMborder01">
+        <div align="center">
+            <!-- BG Text Image  -->
+                <div class="bgimg-1" style="background-image: url('https://imgur.com/2OFomYu.jpeg');">
+        <br>
+        <!-- LOGO -->
+        <div class="bgimg-2"><img src="https://imgur.com/2iuo7Qf.png"></div>
+        <br>
+        <p class="header-style">Library of Monster Maps</p>
+          
+        <p class="title-style">                           Cartographer: Robin Mikhailovich</p><p class="title-style"><font size="4">                                                                               Last Update : 24 Dec 2024</font></p>
+        <div class="separate-style">@</div>
+        <br>
+        <!-- Map -->
+        <div id="dealer-map">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/BlankMap-World_gray.svg">
+            <!-- USA -->
+            <!-- Newyork, Long Island, Half-Blood Camp -->
+            <button class="map-point" style="top:29.1%;left:25%">
+                <div class="content">
+                    <div class="centered-y">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h1>New York, USA</h1>
+                        <div class="pin-style"><span style="color: red;">@</span></div><span>New York</span>
+                        <br>
+                        <br>
+                        <div class="pin-style"><span style="color: red;">@</span></div><span>Long Island</span>
+                        <br>
+                        <p><a href="https://percyjackson.mooorp.com/thread/375/1/1" target="_blank">Jackalope</a></p>
+                        <br>
+                          
+                    </div>
+                </div>
+            </button>
+            <!-- Massachusetts, USA -->
+            <button class="map-point" style="top:28%;left:25.8%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Massachusetts, USA</h1>
+                        <div class="pin-style"><span style="color: white;">@</span></div><span>Salem</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/188/1/3" target="_blank">Dark Witch : Coven</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Grimalkin : Coven</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Alaska, USA -->
+            <button class="map-point" style="top:12.9%;left:12.6%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Alaska, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Idaho, USA -->
+            <button class="map-point" style="top:25%;left:16.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Idaho, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/319/1/2" target="_blank">Kappa</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/277/1/2" target="_blank">Kitsune</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Nevada, USA -->
+            <button class="map-point" style="top:30%;left:13.9%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Nevada, USA</h1>
+                        <div class="pin-style">@</div><span>Las Vegas</span>
+                        <br>
+                        <p><a href="https://percyjackson.mooorp.com/thread/263/1/2" target="_blank">Chupacabra : Zouk Nightclub</a></p>
+                          
+                    </div>
+                </div>
+            </button>
+             
+            <!-- California, USA -->
+            <button class="map-point" style="top:32%;left:12.7%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>California, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/263/1/2" target="_blank">Chupacabra</a></p>
+                        <br>
+                        <div class="pin-style">@</div><span>Los Angeles</span>
+                        <br>
+                        <p><a href="https://percyjackson.mooorp.com/thread/257/1/2" target="_blank">Bake-danuki</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/403/1/1" target="_blank">Hellhound : Cemetery</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/262/1/2" target="_blank">Tengu</a></p>
+                          
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Washington, USA -->
+            <button class="map-point" style="top:26%;left:14%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Washington, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Oregon, USA -->
+            <button class="map-point" style="top:29%;left:12.8%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Oregon, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Arizona, USA -->
+            <button class="map-point" style="top:34%;left:13.9%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Arizona, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/263/1/2" target="_blank">Chupacabra</a></p>
+                    </div>
+                </div>
+            </button>
+            <!-- New Mexico, USA -->
+            <button class="map-point" style="top:34%;left:15.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>New Mexico, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/263/1/2" target="_blank">Chupacabra</a></p>
+                    </div>
+                </div>
+            </button>
+            <!-- Texas, USA -->
+            <button class="map-point" style="top:36%;left:18%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Texas, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/263/1/2" target="_blank">Chupacabra</a></p>
+                        <br>
+                        <div class="pin-style">@</div><span>San Antonio</span>
+                        <br>
+                        <p><a href="https://percyjackson.mooorp.com/thread/288/1/2" target="_blank">Golem : Alamo Church</a></p>
+                          
+                    </div>
+                </div>
+            </button>
+            <!-- Hawaii, USA -->
+            <button class="map-point" style="top:42.5%;left:2.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Hawaii, USA</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/257/1/2" target="_blank">Bake-danuki</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/319/1/2" target="_blank">Kappa</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/277/1/2" target="_blank">Kitsune</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/262/1/2" target="_blank">Tengu</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Yukon, Canada -->
+            <button class="map-point" style="top:15%;left:15%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Yukon, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- British Columbia, Canada -->
+            <button class="map-point" style="top:20%;left:15%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>British Columbia, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Northwest Territories, Canada -->
+            <button class="map-point" style="top:15%;left:19%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Northwest Territories, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Nunavut, Canada -->
+            <button class="map-point" style="top:14%;left:23%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Nunavut, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Alberta, Canada -->
+            <button class="map-point" style="top:20%;left:17%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Alberta, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Saskatchewan, Canada -->
+            <button class="map-point" style="top:20%;left:19%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Saskatchewan, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Manitoba, Canada -->
+            <button class="map-point" style="top:22%;left:21%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Manitoba, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                        <div class="pin-style"><span>@</span></div><span>Winnipeg</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Ontario, Canada -->
+            <button class="map-point" style="top:23%;left:24%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Ontario, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Quebec, Canada -->
+            <button class="map-point" style="top:22%;left:27%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Quebec, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Newfoundland and Labrador, Canada -->
+            <button class="map-point" style="top:20%;left:30%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Newfoundland and Labrador, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- New Brunswick, Canada -->
+            <button class="map-point" style="top:25%;left:28%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>New Brunswick, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Prince Edward Island, Canada -->
+            <button class="map-point" style="top:25.8%;left:30%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Prince Edward Island, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Nova Scotia, Canada -->
+            <button class="map-point" style="top:28%;left:30%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Nova Scotia, Canada</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/304/1/2" target="_blank">Wendigo : Dense forest</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+             
+            <!-- Greenland -->
+            <button class="map-point" style="top:9%;left:37%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Greenland</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/374/1/1" target="_blank">Ahklut</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Mexico -->
+            <button class="map-point" style="top:42%;left:16%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Mexico</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Belize -->
+            <button class="map-point" style="top:45.5%;left:20.1%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Belize</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Guatemala -->
+            <button class="map-point" style="top:46.5%;left:19%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Guatemala</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- El Salvador -->
+            <button class="map-point" style="top:48%;left:19.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>El Salvador</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Honduras -->
+            <button class="map-point" style="top:47.6%;left:20.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Honduras</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Nicaragua -->
+            <button class="map-point" style="top:49%;left:20.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Nicaragua</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Costa Rica -->
+            <button class="map-point" style="top:51%;left:20.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Costa Rica</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Panama -->
+            <button class="map-point" style="top:52%;left:22%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Panama</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Colombia -->
+            <button class="map-point" style="top:56%;left:23.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Colombia</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Venezuela -->
+            <button class="map-point" style="top:53%;left:26%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Venezuela</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Guyana -->
+            <button class="map-point" style="top:53.3%;left:28%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Guyana</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Suriname -->
+            <button class="map-point" style="top:54.5%;left:28.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Suriname</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- French Guiana -->
+            <button class="map-point" style="top:54.5%;left:29.7%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>French Guiana</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Brazil -->
+            <button class="map-point" style="top:65%;left:29%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Brazil</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Ecuador -->
+            <button class="map-point" style="top:58.7%;left:22%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Ecuador</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Peru -->
+            <button class="map-point" style="top:65%;left:23%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Peru</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                        <div class="pin-style"><span style="color: #ffd700;">@</span></div><span>Inca : The lost city</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/379/1/1" target="_blank">Golden Automatons : Ruins of Ancient Sacred Sites</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/288/1/2" target="_blank">Golem</a></p>
+                         
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Bolivia -->
+            <button class="map-point" style="top:70%;left:26.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Bolivia</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Paraguay -->
+            <button class="map-point" style="top:74%;left:28.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Paraguay</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Chile -->
+            <button class="map-point" style="top:77%;left:25%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Chile</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Argentina -->
+            <button class="map-point" style="top:81%;left:27%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Argentina</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Uruguay -->
+            <button class="map-point" style="top:81%;left:29.6%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Uruguay</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/577/1/1" target="_blank">Centaur</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Falkland Islands -->
+            <button class="map-point" style="top:94%;left:30.2%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Falkland Islands</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/404/1/1" target="_blank">Ahuizotl</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Japan -->
+            <button class="map-point" style="top:32%;left:83%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Japan</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/257/1/2" target="_blank">Bake-danuki</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/95/1/3" target="_blank">Goblin</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/319/1/2" target="_blank">Kappa</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/277/1/2" target="_blank">Kitsune</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/262/1/2" target="_blank">Tengu</a></p>
+                        <br>
+                        <div class="pin-style">@</div><span>Tokyo</span>
+                        <br>
+                          
+                    </div>
+                </div>
+            </button>
+            <!-- Haiti -->
+            <button class="map-point" style="top:44%;left:24.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Haiti</h1>
+                        <div class="pin-style">@</div><span>Port-au-Prince</span>
+                        <br>
+                        <p><a href="https://percyjackson.mooorp.com/thread/95/1/3" target="_blank">Goblin : Port-au-Prince</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/188/1/3" target="_blank">Dark Witch : Coven</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/396/1/1" target="_blank">Grimalkin : Coven</a></p>
+                          
+                    </div>
+                </div>
+            </button>
+            <!-- Iran -->
+            <button class="map-point" style="top:34%;left:59%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Iran</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/310/1/2" target="_blank">Jinn</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Norway -->
+            <button class="map-point" style="top:15.9%;left:47.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Norway</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/305/1/2" target="_blank">Wolf ice : Mountainous snow region</a></p>
+                         
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Jersey -->
+            <button class="map-point" style="top:23%;left:44.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Jersey</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/320/1/1" target="_blank">Jersey Devil</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Thai -->
+            <button class="map-point" style="top:47%;left:73.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Thailand</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/321/1/1" target="_blank">Krisorn Raja Singha</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/299/1/2" target="_blank">Leprechaun : Downtown</a></p>
+                        <p><a href="https://percyjackson.mooorp.com/thread/546/1/1" target="_blank">Gorgons (งูเก็งกอง)</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Laos -->
+            <button class="map-point" style="top:44%; left:74%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Laos</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/321/1/1" target="_blank">Krisorn Raja Singha</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Myanmar -->
+            <button class="map-point" style="top:43.5%;left:72%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Myanmar</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/321/1/1" target="_blank">Krisorn Raja Singha</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Vietnam -->
+            <button class="map-point" style="top:48.5%;left:76.2%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Vietnam</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/321/1/1" target="_blank">Krisorn Raja Singha</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Cambodia -->
+            <button class="map-point" style="top:49.2%;left:75%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Cambodia</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/321/1/1" target="_blank">Krisorn Raja Singha</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Indonesia -->
+            <button class="map-point" style="top:59%;left:77.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Indonesia</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/321/1/1" target="_blank">Krisorn Raja Singha</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- India -->
+            <button class="map-point" style="top:44%;left:67%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>India</h1>
+                        <div class="pin-style"><span style="color: green;">8</span></div><span>Commonly found</span>
+                        <p><a href="https://percyjackson.mooorp.com/thread/321/1/1" target="_blank">Krisorn Raja Singha</a></p>
+                        <br>
+                    </div>
+                </div>
+            </button>
+            <!-- Special Location : PopUp Structure -->
+            <div class="custom-model-main">
+              <div class="custom-model-inner">
+                <div class="close-btn">×</div>
+                <div class="custom-model-wrap">
+                  <div class="pop-up-content-wrap">
+                    <h2 id="popup-title">.</h2>
+                    <p id="popup-content">.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-overlay"></div>
+            </div>
+ 
+            <!-- Gif Buttons for different locations -->
+            <button class="map-point-gif" id="atlantic-ocean" style="top:25%; left:37%; width: 70px; height: 70px;">
+              <img src="https://i.imgur.com/be2Xplg.gif" alt="GIF" class="gif-image" style="filter: brightness(5) contrast(1.2); opacity: 0.7;">
+            </button>
+ 
+            <button class="map-point-gif" id="yothanheim" style="top:7%; left:48%; width: 70px; height: 70px;">
+              <img src="https://i.imgur.com/6Dcvtuk.gif" alt="GIF" class="gif-image">
+            </button>
+ 
+            <button class="map-point-gif" id="arctic" style="top:6%; left:26%; width: 70px; height: 70px;">
+              <div class="content">
+                <div class="centered-y">
+                  <img src="https://i.imgur.com/YPKuC9C.gif" alt="GIF" class="gif-image">
+                </div>
+              </div>
+            </button>
+             
+            <button class="map-point-gif" id="asian" style="top:30%; left:68%; width: 80px; height: 80px;">
+              <div class="content">
+                <div class="centered-y">
+                  <img src="https://i.imgur.com/qA0eybq.gif" alt="GIF" class="gif-image" style="filter: grayscale(100%); opacity: 0.8;">
+                </div>
+              </div>
+            </button>
+ 
+            <button class="map-point-gif" id="desert" style="top:41%; left:48%; width: 70px; height: 70px;">
+              <div class="content">
+                <div class="centered-y">
+                  <img src="https://i.imgur.com/gnMKwz0.gif" alt="GIF" class="gif-image" style="filter: grayscale(100%); opacity: 0.5;">
+                </div>
+              </div>
+            </button>
+ 
+            <button class="map-point-gif" id="hell" style="top:99%; left:10%; width: 70px; height: 70px;">
+              <div class="content">
+                <div class="centered-y">
+                  <img src="https://i.imgur.com/6TkM4he.gif" alt="GIF" class="gif-image" style="filter: brightness(5) contrast(1.2); opacity: 0.7;">
+                </div>
+              </div>
+            </button>
+             
+            <button class="map-point-gif" id="USA" style="top:30%; left:20%; width: 80px; height: 80px;">
+              <div class="content">
+                <div class="centered-y">
+                  <img src="https://i.imgur.com/eKH8w67.gif" alt="GIF" class="gif-image">
+                </div>
+              </div>
+            </button>
+             
+            <button class="map-point-gif" id="europe" style="top:15%; left:60%; width: 80px; height: 80px;">
+              <div class="content">
+                <div class="centered-y">
+                  <img src="https://i.imgur.com/oV7CW7e.gif" alt="GIF" class="gif-image" style="filter: grayscale(100%) brightness(1) contrast(1.2); opacity: 0.7;">
+                </div>
+              </div>
+            </button>
+             
+        </div> <!-- End of Map -->
+        <div class="separate-style"><br></div><div class="separate-style">@</div>
+        <p class="title-style">                                                           Monster Density Level</p>
+        <p><font face="IrisUPC" color="#ffffff" size="5">                                                                                                  <i><b>White:</b> 1-5 types</i></font></p>
+         <p><font face="IrisUPC" size="5"><i style=""><font color="#ffffff">                                                                                              </font><font color="#ff8c00"><b>Orange:</b></font><font color="#ffffff"> 6-10 types</font></i></font></p>
+         <p><font face="IrisUPC" size="5"><i style=""><font color="#ffffff">                                                                                                    </font><font color="#ff0000"><b>Red:</b></font><font color="#ffffff"> 11+ types</font></i></font></p>
+                  <p><font face="IrisUPC" size="5"><i style=""><font color="#ffffff">                                                                                                    </font><font color="#008000"><b>Green:</b></font><font color="#ffffff"> Local monsters commonly found in the area</font></i></font></p>
+                  <p><font face="IrisUPC" size="5"><i style=""><font color="#ffffff">                                                                                                    </font><font color="#ffd700"><b>Gold (Monster Animation):</b></font><font color="#ffffff"> Special Location</font></i></font></p>
+                  <div class="separate-style"><br></div><div class="separate-style">@</div>
+        <p class="title-style">                                                         How It Works</p>
+         
+        <div class="desc-box">
+            <p class="text-style">     คลิกที่หมุดสี่เหลี่ยม/รูปอสุรกายบนแผนที่ จากนั้นจะเห็นชื่อสถานที่และรายชื่ออสุรกายที่มีโอกาสปรากฏตัวในพื้นที่นั้นๆ สามารถคลิกที่ชื่ออสุรกายแต่ละตัวเพื่อดูรายละเอียดเพิ่มเติมได้</p>
+            <br>
+            <p class="text-style">     หมายเหตุ: อสุรกายประเภท `พบได้ทั่วโลก` สามารถดูรายละเอียดได้ที่หมุด USA (รูปคบเพลิง)</p>
+        </div>
+        <div class="separate-style"><br></div><div class="separate-style">@</div>
+        <br>
+         <div><img width="100" _height="100" src="https://i.imgur.com/CPhaEYI.png"></div>
+          
+         <p class="title-style">                                                         หอสมุดแผนที่ปีศาจ</p>
+           
+         <!-- Gallery box -->
+         <div class="gallery-box">
+          <img src="https://i.imgur.com/WAVNmrK.jpg" alt="Image 1">
+          <img src="https://i.imgur.com/op7KNSW.jpg" alt="Image 2">
+          <img src="https://i.imgur.com/OnLuge6.jpg" alt="Image 3">
+        </div>
+        <br>
+           
+         <div class="desc-box">
+                    <p class="text-style">     บนผนังด้านหนึ่งในห้องของคุณดี มีแผนที่ขนาดใหญ่ที่เต็มไปด้วยพิกัดที่ซึ่งอสุรกายจากทั่วทุกมุมโลกหลบซ่อนอยู่ เป็นเครื่องมือสำคัญที่ช่วยให้ชาวค่ายรุ่นใหม่สามารถหลีกเลี่ยงการเผชิญหน้ากับอสุรกายได้ หากไม่จำเป็นต้องเข้าไปในพื้นที่อันตรายนั้น ข้างกันมีชั้นหนังสือที่เต็มไปด้วยบันทึกทั้งเก่าและใหม่เกี่ยวกับอสุรกายในเทวตำนานทุกประเภท</p>
+                        <br>
+            <p class="text-style">     แผนที่แสดงหมุดสีต่างๆ ที่มีความหมายเฉพาะ หมุดสีแดงคือสถานที่ที่อสุรกายอันตรายรวมตัวกันอย่างหนาแน่นจนแทบจะไม่สามารถหายใจได้ หมุดสีส้มและขาวถูกใช้เพื่อบอกถึงพื้นที่ที่ยังคงมีความเสี่ยงน้อย หากคุณไม่เข้าไปใกล้เกินไป พื้นที่เหล่านี้อาจจะยังพอปลอดภัย แต่ก็ไม่สามารถไว้ใจได้เต็มที่หากไม่ได้ระวังตัว</p>
+                  </div>
+        <div class="separate-style"><br></div><div class="separate-style">@</div>
+        <div><img width="100" _height="100" src="https://i.imgur.com/QoviQi5.png"></div>
+        <p class="title-style">                                                         Monster Map (Dedalus Application)</p>
+        <div class="desc-box">
+            <p class="text-style">     `Monster Map` แอปพลิเคชันสุดล้ำที่มาพร้อมกับสมาร์ทโฟนเดดาลัส และใช้งานได้บนทุกอุปกรณ์ผ่านบราวเซอร์ ด้วยเครือข่ายสัญญาณ WiFi ของค่ายฮาล์ฟบลัด ฮิฮิ) ระบบแทร็กกิ้งอัจฉริยะจะช่วยแจ้งเตือนเมื่อมนุษย์กึ่งเทพเข้าใกล้พื้นที่ที่มีอสุรกายในระยะ 3 กิโลเมตร ทำให้คุณมีโอกาสหลีกเลี่ยงการเผชิญหน้าที่ไม่จำเป็น และไม่ต้องกังวล—ระบบป้องกันขั้นสูงจะไม่ส่งข้อมูลตำแหน่งของคุณไปถึงอสุรกายแน่นอน!</p>
+            <p class="text-style">     "ได้เวลาซื้อโทรศัพท์กันแล้วทุกโค้นนนนน วู้วๆ!"</p>
+                  
+                  </div>
+                  <div class="separate-style"><br></div><div class="separate-style">@</div>
+          
+                <iframe width="1" height="1" src="https://www.youtube-nocookie.com/embed/Av04XfLtAcU?autoplay=1&loop=1&playlist=Av04XfLtAcU&si=rA0nKPwgYesBR08M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                </div> <!-- End of BG Text Image -->
+        <div><!-- Input text -->
+        </div>
+  
+        </div> <!-- End of Center -->
+</div>
