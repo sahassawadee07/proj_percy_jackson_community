@@ -1,0 +1,627 @@
+[disableleft]
+[disableleft]
+<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/dalek">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&amp;display=swap" rel="stylesheet">
+<style> 
+	/* Outside box style*/
+    #boxHMborder01 {
+      padding: 2px;
+      border: 5px solid transparent;
+      border-radius: 20px;
+      border-image: transparent;
+      background-clip: padding-box;
+      color: transparent;
+      filter: drop-shadow(5px 15px 15px #000);
+      transform-origin: top;
+      background-color:transparent ;
+       position: relative;
+    }
+    #boxHMborder01::after {
+      position: absolute;
+      top: -5px; bottom: -5px;
+      left: -5px; right: -5px;
+      background: repeating-linear-gradient(105deg, #ffb338 0%, #3e2904 5%, #ffb338 12%);
+      content: '';
+      z-index: -1;
+      border-radius: 20px;
+    }
+    
+    .bgimg-1 {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%; 
+      height: 100%;
+      border-radius: 10px;
+      filter: brightness(105%);
+    }
+    
+    .bgimg-2 {
+      flex-shrink: 0;
+      width: 180px;
+      height: auto;
+      overflow: hidden;
+      filter: brightness(40%);
+    }
+
+    .bgimg-2 img {
+      height: auto;
+      width: 100%;
+      transition: transform 1s, border-radius 1s;
+    }
+
+    .bgimg-2:hover img {
+      transform: scale(1.2);
+    }
+    
+    .header-style {
+      text-align: center;
+      font-family: 'Dalek', sans-serif; 
+      font-size: 40px;
+      background: -webkit-repeating-linear-gradient(105deg, #ffb338 0%, #3e2904 5%, #ffb338 12%);
+  		          -webkit-background-clip: text;
+  				  -webkit-text-fill-color: transparent;
+    }
+    
+    .separate-style {
+      text-align: center;
+      font-family: 'Dalek', sans-serif; 
+      font-size: 25px;
+      background: -webkit-repeating-linear-gradient(105deg, #ffb338 0%, #3e2904 5%, #ffb338 12%);
+  		          -webkit-background-clip: text;
+  				  -webkit-text-fill-color: transparent;
+    }
+    .title-style {
+      text-align: center;
+      font-family: 'Dalek', sans-serif; 
+      font-size: 30px;
+      color:#3e2904;
+    }
+    
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(transparent, #ffb338);
+      border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(transparent, #3e2904);
+    }
+    
+    /*Background Style*/
+    body {
+      background-image: url("https://i.imgur.com/pjqfBqe.gif");
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-color: transparent;
+    }
+    
+    /*Map Style*/
+    /*map point style*/
+    :root {
+      --color-background: rgb(0, 0, 0); 
+      --color-highlight: rgb(255, 179, 56);
+      --color-highlight-light: rgb(252, 252, 252); /* lighten by 10% */
+      --color-highlight-dark: rgb(252, 252, 252);  /* outside color : darken by 10% */ 
+      --color-foreground: rgb(255, 255, 255); /* invert(0, 0, 0) */
+      --map-dot-size: 20px;
+      --transition-time: 0.25s;
+    }
+	
+    /*id of dealer map*/
+    #dealer-map {
+      position: relative;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    #dealer-map img {
+      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      opacity: 0.7;
+      filter: brightness(85%);
+    }
+	
+    /*font management*/
+    #dealer-map h1, #dealer-map h2, #dealer-map h3, #dealer-map h4, #dealer-map h5, #dealer-map h6 {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    #dealer-map h1 { font-size: 25px; font-family: 'Dalek', sans-serif;}
+    #dealer-map h2 { font-size: 10pt; }
+    #dealer-map p {
+      font-size: 20px;
+      margin-bottom: 5px;
+      font-family: "Cordia New";
+      line-height: 0.6;
+    }
+
+    #dealer-map strong {
+      font-weight: 900;
+      color: var(--color-foreground);
+    }
+
+    #dealer-map a {
+      transition: color var(--transition-time) ease-in-out;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--color-highlight-light);
+    }
+
+    #dealer-map a:visited {
+      color: var(--color-highlight-light);
+    }
+
+    #dealer-map li.active a,
+    #dealer-map a:hover,
+    #dealer-map a:active {
+      color: var(--color-foreground);
+    }
+
+	/*map point action*/
+    .map-point {
+      cursor: pointer;
+      outline: none;
+      z-index: 0;
+      position: absolute;
+      width: var(--map-dot-size);
+      height: var(--map-dot-size);
+      border-radius: 20%;
+      opacity: 0.8;
+      transform: translate(-50%, -50%);
+      transition: opacity var(--transition-time) ease-in-out var(--transition-time), width var(--transition-time) ease-in-out var(--transition-time), height var(--transition-time) ease-in-out var(--transition-time), z-index var(--transition-time) ease-in-out var(--transition-time);
+      background: rgba(0, 0, 0, 0.85); /* transparentize(var(--color-background), 0.15) */
+      border: calc(var(--map-dot-size) / 8) solid var(--color-highlight-dark);
+    }
+
+	/*map point box*/
+    .map-point .content {
+      position: relative;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity var(--transition-time) ease-in-out;
+      width: 100%;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      overflow: auto; /*provide a scrollbar if the content overflows the box in any direction*/
+      border-radius: 0;
+    }
+
+    .map-point .content .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .map-point .content .centered-y {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .map-point:active, .map-point:focus {
+      margin: 0;
+      padding: 0;
+      opacity: 1;
+      width: 300px;
+      height: 300px;
+      color: var(--color-foreground);
+      z-index: 1;
+      transition: opacity var(--transition-time) ease-in-out, width var(--transition-time) ease-in-out, height var(--transition-time) ease-in-out;
+    }
+
+    .map-point:active .content, .map-point:focus .content {
+      opacity: 1;
+      transition: opacity var(--transition-time) ease-in-out var(--transition-time), height 0 ease-in-out var(--transition-time), overflow 0 ease-in-out var(--transition-time);
+      overflow: hidden;
+    }
+
+    .map-point:active .content a:hover, .map-point:focus .content a:active {
+      color: var(--color-highlight);
+    }
+    #HMcardmember {
+      display: flex;
+      align-items: center;
+      background:linear-gradient(180deg,white 88%,grey 0.1%,grey 12%);
+      border-image: repeating-linear-gradient(105deg, #ffb338 0%, #3e2904 5%, #ffb338 12%)1;
+      border-color: transparent;
+	  border-width: 1px;
+	  border-style: solid;
+      border-radius: 0px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      max-width: 600px;
+      max-height: 250px;
+      position: relative;
+      justify-content: center;
+    }
+
+    .members-image {
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .members-image img {
+      transition: transform 1s, border-radius 1s;
+    }
+
+    .members-image:hover img {
+      transform: scale(1.2);
+    }
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      background-color: #fff;
+      width: auto;
+      height: 0;
+      transition: .5s ease;
+      overflow: auto;
+    }
+    #HMcardmember:hover .overlay {
+      height: 100%;
+    }
+    
+    .overlay-tps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .hm-font-box-text {
+      padding: 10px;
+      flex: 1;
+      align-items: center;
+      overflow: auto;
+    }
+    .hm-font-box-text h1 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-family: "Noto Sans Thai", sans-serif;
+      color: #696969; /* Font color */
+      font-weight: bold;
+      font-size: 27px;
+      text-align: center;
+    }
+    .hm-font-box-text h2 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-family: "Noto Sans Thai", sans-serif;
+      color: #696969; /* Font color */
+      font-size: 24px;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    .hm-font-box-text p {
+      font-family: "Noto Sans Thai", sans-serif;
+      color: #696969; /* Font color */
+      font-size: 15px;
+      font-weight: lighter;
+      line-height: 1.5;
+    }
+
+    .hm-font-box-text h3 {
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-family: 'Dalek', sans-serif; 
+      font-size: 20px;
+      background: -webkit-repeating-linear-gradient(105deg, #ffb338 0%, #3e2904 5%, #ffb338 12%);
+  		          -webkit-background-clip: text;
+  				  -webkit-text-fill-color: transparent;
+    }
+
+</style> 
+
+<div id="boxHMborder01"> 
+	<div align="center">
+		<div class="bgimg-1" style="background-image: url('https://i.imgur.com/gv0VlPm.jpeg');">
+        <br>
+        <!-- LOGO -->
+        <div class="bgimg-2"><img src="https://i.imgur.com/Q3pNjeV.png"></div>
+        <br>
+        <p class="header-style">CABIN 11 ☤ HERMES</p>
+        <br>
+        <div class="separate-style">@@@@@@@@@@</div>
+        <br>
+        <!-- MEMBER Title -->
+        <div class="title-style"><img src="https://i.pinimg.com/originals/2f/c4/16/2fc416822216737270f1566324e5c1b3.gif" width="2%"> Member(s)</div>
+        <br>
+        <!-- #01:Robin-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/0WKgtkA.jpeg" width="265px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Robin G. Mikhailovich</h1>
+              <h2>โรบิน มิไคเลอร์วิช</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>jun 22 (14 y/o) | russian | female</p>
+              <p>blond &amp; pink / dark hair | sparkling sandy eyes</p>
+              <p>tmi: พูดได้หลายภาษา, Jack of all trades</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 44.2%;">
+              <p>For more character details : <a href="https://percyjackson.mooorp.com/thread/177/1/1" target="_blank">click</a></p>
+              <p><a href="https://percyjackson.mooorp.com/home.php?mod=space&amp;uid=35&amp;do=index" target="_blank">Profile Blog</a></p>
+              </div><!-- End of things inside-->
+            </div>
+         </div>
+        <p class="separate-style">@</p>
+        <!-- #02:Sebastian-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/Du3ygXW.png" width="265px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Sebastian Langford</h1>
+              <h2>เซบาสเตียน แลงฟอร์ด</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>feb 13 (15 y/o) | british | male</p>
+              <p>dark hair | blue eyes</p>
+              <p>tmi: ติดเกมอันดับหนึ่ง, ทำอาหารเก่ง</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 44.2%;">
+              <p>For more character details : <a href="https://percyjackson.mooorp.com/thread/345/1/1" target="_blank">click</a></p>
+              <p><a href="https://percyjackson.mooorp.com/home.php?mod=space&amp;uid=50&amp;do=index" target="_blank">Profile Blog</a></p>
+              </div><!-- End of things inside-->
+            </div>
+         </div>
+        <p class="separate-style">@</p>
+        <!-- #03:Jayvik-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/jFz4SIS.jpeg" width="265px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Jayvik Mchonde</h1>
+              <h2>เจวิค แม็คชอลเด</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>feb 1 (19 y/o) | german | male</p>
+              <p>dark brown wavy hair | green-gray eyes</p>
+              <p>tmi: เป็นมิตร, ชอบช่วยเหลือ, ชอบเที่ยวป่ากับทะเล</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 44.2%;">
+              <p>For more character details : <a href="https://percyjackson.mooorp.com/thread/423/1/1" target="_blank">click</a></p>
+              <p><a href="https://percyjackson.mooorp.com/home.php?mod=space&amp;uid=53&amp;do=index" target="_blank">Profile Blog</a></p>
+              </div><!-- End of things inside-->
+            </div>
+         </div>
+        <p class="separate-style">@</p>
+        <!-- Map -->
+        <div id="dealer-map">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/BlankMap-World_gray.svg">
+            <!-- Member01:Robin -->
+            <button class="map-point" style="top:15%;left:67%">
+                <div class="content">
+                    <div class="centered-y">
+                    	<h1>Russians</h1>
+                        <p>Member : 1</p>
+                        <p>NPC : 0</p>
+                        <br>
+                        <div class="separate-style">@@@@</div>
+                        <p>Robin G. Mikhailovich</p>                        
+                    </div>
+                </div>
+            </button>
+            <!-- Member02:Sebastian -->
+            <button class="map-point" style="top: 21%;left:45%">
+                <div class="content">
+                    <div class="centered-y">
+                    	<h1>British</h1>
+                        <p>Member : 1</p>
+                        <p>NPC : 0</p>
+                        <br>
+                        <div class="separate-style">@@@@</div>
+                        <p>Sebastian Langford</p>                        
+                    </div>
+                </div>
+            </button>
+            <!-- Member03:Jayvik -->
+            <button class="map-point" style="top: 22%;left:48%">
+                <div class="content">
+                    <div class="centered-y">
+                    	<h1>German</h1>
+                        <p>Member : 1</p>
+                        <p>NPC : 0</p>
+                        <br>
+                        <div class="separate-style">@@@@</div>
+                        <p>Jayvik Mchonde</p>                        
+                    </div>
+                </div>
+            </button>
+            <!-- NPC01:Cecil, Victoria -->
+            <button class="map-point" style="top:30%;left:18%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Americans</h1>
+                        <p>Member : 0</p>
+                        <p>NPC : 2</p>
+                        <br>
+                        <div class="separate-style">@@@@</div>
+                        <p>Cecil Markowitz</p>
+                        <p>Victoria Bernard</p>
+                    </div>
+                </div>
+            </button>
+            <!-- NPC02:Layla&Laylyn-->
+            <button class="map-point" style="top:39%;left:53%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Egyptians</h1>
+                        <p>Member : 0</p>
+                        <p>NPCs : 2</p>
+                        <br>
+                        <div class="separate-style">@@@@</div>
+                        <p>Layla El-Faouly</p>
+                        <p>Laylynn El-Faouly</p>
+                    </div>
+                </div>
+            </button>
+            <!-- NPC03:Ehan-->
+            <button class="map-point" style="top:45%;left:75%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Vietnameses</h1>
+                        <p>Member : 0</p>
+                        <p>NPC : 1</p>
+                        <br>
+                        <div class="separate-style">@@@@</div>
+                        <p>Ethan Giang</p>
+                    </div>
+                </div>
+            </button>
+            <!-- NPC04:Kazuha-->
+            <button class="map-point" style="top:32%;left:82.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h1>Japaneses</h1>
+                        <p>Member : 0</p>
+                        <p>NPC : 1</p>
+                        <br>
+                        <div class="separate-style">@@@@</div>
+                        <p>Tengen Kazuha</p>
+                    </div>
+                </div>
+            </button>
+        </div> <!-- End of Map -->
+        <p class="separate-style">@</p>
+        <!-- NPC Profile -->
+		<div class="title-style"><img src="https://i.pinimg.com/originals/2f/c4/16/2fc416822216737270f1566324e5c1b3.gif" width="2%"> NPC(s)</div>
+        <br>
+        <!-- #01:Kazuha-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/aovqNQN.jpeg" width="250px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Tengen Kazuha</h1>
+              <h2>เท็นเก็น คาสึฮะ</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>july 7 (23 y/o) | japanese | female</p>
+              <p>orange hair | hazel eyes</p>
+              <p>tmi: ไม่มีใครรู้ว่าสีผมจริงๆ ของเธอเป็นสีอะไร, ชอบแบ่งปันเมนูอาหารญี่ปุ่นให้เซซิลได้ลองทำ, จิ้งจอกเจ้าเล่ห์</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 41.7%;"><p style="text-align: left;"><br><br><br><br><br><br>&nbsp; &nbsp; &nbsp; &nbsp;พี่สาวคนโตของบ้าน ช่างพูดช่างเจรจาและมีความน่าเชื่อถือ จนบางครั้งคนฟังแทบไม่รู้ตัวว่ากำลังหลงเข้าไปในกับดักวาจาของเธอคนนี้เข้าอย่างจัง<br><br>&nbsp; &nbsp; &nbsp; &nbsp;ไม่ว่าจะเรื่องใดก็ตาม คาสึฮะมักจะนำหน้าคนอื่นหนึ่งก้าวเสมอ เธอชอบชักจูงเซซิลให้ทำอะไรแปลกๆ จนถูกตั้งฉายาว่า 'ยัยจิ้งจอก' ตั้งแต่ช่วงแรกที่รู้จักกัน<br><br>&nbsp; &nbsp; &nbsp; &nbsp;ภารกิจแรกของเธอที่ได้รับจากเฮอร์มีสผู้เป็นพ่อคือการไปช่วยเหลือสองพี่น้องเอลฟาวลีย์ที่อียิปต์จากเหตุการณ์บูชายันต์และพามาที่ค่ายฮาล์ฟบลัดอย่างปลอดภัย<br><br>&nbsp; &nbsp; &nbsp; &nbsp;ปัจจุบันเป็นนักศึกษาภาควิชาบริหารธุรกิจที่มหาวิทยาลัยในโตเกียว<br><br></p></div>
+            </div>
+         </div>
+        <br>
+        <!-- #02:Cecil-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/7d4vQrK.jpeg" width="250px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Cecil Markowitz</h1>
+              <h2>เซซิล มาร์โควิทซ์</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>oct 3 (19 y/o) | jewish american | male</p>
+              <p>black hair w/ red highlights | bright blue eyes</p>
+              <p>tmi: ทำอาหารได้, ชอบเล่นฟุตบอล(Chelsea FC)</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 41.7%;"><p style="text-align: left;"><br><br>&nbsp; &nbsp; &nbsp; &nbsp;เด็กหนุ่มอเมริกันเชื้อสายยิวผู้มีนิสัยร่าเริงจนถึงขั้นไฮเปอร์ มองโลกในแง่ดี ขี้แกล้ง ชอบช่วยเหลือคนอื่นและคอยสร้างบรรยากาศดีๆ ให้กับคนรอบตัวอยู่เสมอ แต่ลึกๆ ก็มีมุมอ่อนไหวเช่นกัน<br><br>&nbsp; &nbsp; &nbsp; &nbsp;เป็นผู้เชี่ยวชาญด้านการสอดแนม มีความสามารถพิเศษในการก่อวินาศกรรมและสร้างความวุ่นวาย&nbsp;เรียกได้ว่าที่ไหนมีเขา ที่นั่นมีเรื่องให้ปวดหัวแน่นอน<br><br>&nbsp; &nbsp; &nbsp; &nbsp;(มีเป้าหมายอยากเป็นเชฟ และยังไม่มีแผนจะเรียนต่อมหาวิทยาลัยอย่างจริงจัง)<br><br></p></div>
+            </div>
+         </div>
+        <br>
+        <!-- #03:Ethan-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/ijAhucH.jpeg" width="169px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Ethan Giang</h1>
+              <h2>อีธาน ซาง</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>sept 25 (17 y/o) | vietnamese | male</p>
+              <p>blond hair | pale blue eye</p>
+              <p>tmi: มักถูกเข้าใจผิดว่าเป็นผู้หญิง, เซียนไพ่นกกระจอก</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 28.2%;"><p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;เด็กหนุ่มผมยาวชาวเวียดนามเชื้อสายจีนผู้มีความสามารถด้านเทคโนโลยี AI ชนิดหาตัวจับยากจนถูกทาบทามจากมหาวิทยาลัยชั้นนำด้านเทคโนโลยีตั้งแต่อายุยังน้อย</p><p style="text-align: left;"><br></p><p style="text-align: left;"><span style="font-weight: lighter;">&nbsp; &nbsp; &nbsp; &nbsp;ปกติมักจะหมกตัวทำโปรเจคอยู่ในห้องนอนส่วนตัวของตัวเองจนดูเหมือนไม่ค่อยเข้าสังคม แต่จริงๆ แล้วเข้ากับคนง่าย อ่อนโยน รักพวกพ้อง เป็นที่ปรึกษาที่ดีของโรบินและเป็นพี่เลี้ยงของสองพี่น้องเอลฟาวลีย์</span></p><p style="text-align: left;"><span style="font-weight: lighter;"><br></span></p><p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;ด้วยเค้าโครงใบหน้าแบบเอเชียและรูปร่างที่ค่อนข้างปราดเปรียวทำให้ถูกเข้าใจผิดว่าเป็นผู้หญิงอยู่บ่อยๆ และเจ้าตัวก็ไม่ได้คิดจะแก้ความเข้าใจผิดนั้น<span style="font-weight: lighter;"><br></span></p></div>
+            </div>
+         </div>
+        <br>
+        <!-- #04:Layla-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/8S3TNEx.jpeg" width="250px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Layla El-Faouly</h1>
+              <h2>เลย์ลา เอลฟาวลีย์</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>sept 16 (12 y/o) | egyptian | female</p>
+              <p>black hair | jade green eyes</p>
+              <p>tmi: แฝดพี่ แต่เหมือนน้อง, อ่านภาษาเฮียโรกลิฟิกได้</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 41.7%;"><p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;เอลฟาวลีย์คนพี่ ก่อนจะถูกช่วยเหลือจากคาสึฮะเธอกับน้องเคยเป็นเด็กกำพร้าที่อาศัยอยู่กับลุงที่เป็นหนี้และชอบใช้ความรุนแรง ทั้งคู่จึงหนีออกมาใช้ชีวิตเร่ร่อนข้างถนนอยู่บ่อยครั้ง สุดท้ายถูกผู้เป็นลุงขายให้กับลัทธิโบราณที่ต้องการร่างเด็กสาวสำหรับพิธีบูชายันต์</p><p style="text-align: left;"><br></p><p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;ปกติเป็นคนพูดเสียงเบา กลัวคนตัวโตเสียงดัง(โดยเฉพาะเซซิล) แต่เวลาเถียงหรือทะเลาะกับเลย์ลินน์จะเสียงดังกว่าปกติ</p></div>
+            </div>
+         </div>
+        <br>
+        <!-- #05:Laylynn-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/woK3rZX.jpeg" width="250px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Laylynn El-Faouly</h1>
+              <h2>เลย์ลินน์ เอลฟาวลีย์</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>sept 16 (12 y/o) | egyptian | female</p>
+              <p>black hair | jade green eyes</p>
+              <p>tmi: แฝดน้อง แต่ชอบเล่นปลอมตัวเป็นพี่สาว, วิ่งเร็ว</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 41.7%;"><p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;เอลฟาวลีย์คนน้อง เป็นคนเข้มแข็งและไม่กลัวลุงผู้ชอบใช้ความรุนแรง ทำให้เวลามีปากมีเสียงกันเธอมักถูกตบหน้าอยู่บ่อยครั้ง ตัวติดกับพี่ไม่ห่างเพราะรู้สึกว่าต้องปกป้องอีกคนตลอดเวลา ในวันที่เลย์ลาถูกขาย เลย์ลินน์แอบสลับตัวกับพี่สาวเพื่อหวังจะทำลายพิธี</p><p style="text-align: left;"><br></p><p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;ปกติเป็นคนพูดเสียงดัง และจะยิ่งเสียงดังกว่าเดิมเมื่อเถียงกับเลย์ลาหรือเวลาโดนเซซิลแหย่</p></div>
+            </div>
+         </div>
+         <br>
+                 <!-- #06:Victoria-->
+        <div id="HMcardmember">
+            <div class="members-image">
+              <img src="https://i.imgur.com/SIMMX9m.png" width="140px" height="250px">
+            </div>
+            <div class="hm-font-box-text">
+              <h1>Victoria Bernard</h1>
+              <h2>วิคตอเรีย แบร์นาร์ด</h2>
+              <h3 class="separate-style">@@@</h3>
+              <p>mar 17 (31 y/o) | american | lgbtq+</p>
+              <p>black/red hair | green eyes</p>
+              <p>tmi: พนักงานร้าน 7-11 ประจำค่ายฮาล์ฟบลัด, Cyberpunk Girl</p><br>
+              <p><img src="https://i.imgur.com/cSLuBuZ.gif" width="20px" height="20px" style="-webkit-text-fill-color: transparent; font-weight: normal;"></p>
+              <!-- Things inside-->
+              <div class="overlay overlay-tps" style="left: 23.3%;"><p style="text-align: left;"><br><br><br>&nbsp; &nbsp; &nbsp; &nbsp;พี่สาวสุดเท่ประจำบ้านพักหมายเลข 11 ผู้ชอบแต่งตัวสไตล์ไซเบอร์พังกับไว้ผมทรงโมฮอว์กอันเป็นเอกลักษณ์ วิคตอเรียเป็นคนสดใสอารมณ์ดี ชอบหัวเราะเสียงดัง ขัดกับหน้าตาที่ดูดุดันอย่างสิ้นเชิง</p><p style="text-align: left;"><br></p><p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;เธอใช้เวลาส่วนใหญ่อยู่ที่ร้านสะดวกซื้อ 7-11 ในค่าย ไม่ใช่เพียงแค่ทำงาน แต่เธอรักในงานขายและบริการด้วยใจจริง หลังจบการศึกษาจากมหาวิทยาลัยเอกชนในนิวยอร์ก เธอตัดสินใจกลับมายังค่ายฮาล์ฟบลัดเพื่อปักหลักใช้ชีวิตอย่างเรียบง่ายและใกล้ชิดกับครอบครัวเพียงหนึ่งเดียวที่เหลืออยู่</p><p style="text-align: left;"><br></p><p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;แม้จะเป็นสมาชิกที่อายุมากที่สุดในบ้าน แต่วิคตอเรียกลับมอบตำแหน่ง "พี่ใหญ่" ให้คาสึฮะเพราะเห็นว่าอีกฝ่ายดูแลน้องๆ และจัดการเรื่องในบ้านได้ดีกว่า ส่วนเธอเลือกที่จะเป็น "พี่สาวผู้สดใส" ที่น้องๆ ทุกคนในบ้านสามารถพึ่งพาและพูดคุยด้วยได้เสมอแทน</p></div>
+            </div>
+         </div>
+    	<div style="text-align: left;"><br></div>
+<iframe width="1" height="1" src="https://www.youtube.com/embed/hsJwQjWS48o?autoplay=1&amp;loop=1&amp;playlist=hsJwQjWS48o&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+		</div> <!-- End of BG Text Image -->
+        <div><!-- Input text -->
+        
+        </div>
+
+	</div> <!-- End of Center -->
+</div> 
