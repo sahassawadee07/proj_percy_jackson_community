@@ -1,0 +1,304 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<style> 
+  /* Outside box and bg*/
+  #boxProfilebg {
+      border: 1px solid #ffff;
+      border-radius: 10px;
+      padding: 0px;
+  }
+  /*Create a Parallax Effect*/
+  .bgimg-1,
+  .bgimg-2,
+  .bgimg-3 {
+      background-attachment: inherit;
+      background-position: center;
+      background-repeat: repeat;
+      background-size: cover;
+  }
+  /* Header image prop. */
+  .bgimg-1 {
+      min-height: 300px; /* the height of header */
+  }
+  .w3-wide {
+      letter-spacing: 10px;
+  }    
+  .w3-hover-opacity {
+      cursor: pointer;
+  }  
+  
+  /* Turn off parallax scrolling for tablets and phones */
+  @media only screen and (max-device-width: 1600px) {
+   .bgimg-1,
+   .bgimg-2,
+   .bgimg-3 {
+      background-attachment: scroll;
+      min-height: 500px;
+        }
+    }  
+
+  .bio-info .table-container {
+      margin-top: 0px;
+      border-radius: 10px;
+      overflow: hidden; /* To prevent small white corners */
+  }
+  .bio-info table,
+  .bio-info th,
+  .bio-info td {
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 10px;
+      border-style: dashed;
+      border-color: #a1887f;
+      background-color: transparent;
+  }
+  .bio-info table {
+      border-collapse: separate; /* Separate borders */
+      border-spacing: 10px; /* Add space between rows */
+  }
+  .bio-info th {
+      width: 30%;
+      border-radius: 10px;
+      background-color: #f4eeeeff;
+      color: #37352fff; /* Font color */
+      padding-top: 3px;
+      padding-bottom: 3px;
+      text-align: center;
+      color: #696969; /* Font color */
+      font-family: "Cordia New";
+      font-size: 22px;
+      font-weight: bold;
+    }
+  .bio-info td {
+      color: #37352fff; /* Font color */
+      border-color: #ffffff;
+      text-align: left;
+      color: #696969; /* Font color */
+      font-family: "Cordia New";
+      font-size: 22px;
+  }
+  .bgimg-1 {
+      min-height: 330px; /* the height of header */
+  }
+  .bio-title { /* for header text*/
+      background-color: #f4eeeeff; /* Background color */
+      border-radius: 7px; /* Round border */
+      padding-top: 7px; /* Add padding */
+      padding-bottom: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* box shadow */
+      margin-bottom: 0px; /*space between title and there's content*/
+      margin-top: 20px;
+      color: #696969; /* Font color */
+      font-family: "Verdana";
+      font-size: 30px;
+    }
+  .title-box { /* for title box */
+      border-radius: 10px; 
+      background-color: #f4eeeeff
+  }
+  .text-style { /* for free text style */
+  	  text-align: left;
+      color: #696969; /* Font color */
+      font-family: "Cordia New";
+      font-size: 22px;
+  }
+  .text-right {
+  	  text-align: right;
+      color: #696969; /* Font color */
+      font-family: "Cordia New";
+      font-size: 22px;
+  }
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+  blockquote{
+    font-size: 22px;
+    width:100%;
+    margin:50px auto;
+    font-family:Cordia New;
+    font-style:normal;
+    color: #696969;
+    padding:1.2em 30px 1.2em 75px;
+    border-left:8px solid #a1887f ;
+    line-height:1.6;
+    position: relative;
+    background:#EDEDED;
+  }
+
+  blockquote::before{
+    font-family:Sriracha;
+    content: "\201C";
+    color:#a1887f;
+    font-size: 70px;
+    position: absolute;
+    left: 10px;
+    top:-10px;
+  }
+
+  blockquote::after{
+  	font-family:Sriracha;
+    content: "\201D";
+    color:#a1887f;
+    font-size: 70px;
+    position: absolute;
+    right: 10px;
+    bottom:-55px;
+  }
+
+  blockquote span{
+    display:block;
+    color:#696969;
+    font-family:Cordia New;
+    font-weight: bold;
+    margin-top:1em; 
+    font-style:italic;
+    text-align: right;
+    font-size: 22px;
+  }
+  .highlight-gradient {
+  border-radius: 2px;
+  padding: 2px 5px;
+  background-image: linear-gradient(to top right, #a1887f 0%, #f4eeee 100%);
+  font-family:Cordia New;
+  font-weight: bold;
+  color:#fff;
+  
+}
+
+</style>
+
+<div id="boxProfilebg">
+<div align="center">
+	<!-- * First Parallax Image with Logo Text -->
+	<div class="bgimg-1 w3-display-container w3-opacity-min" id="home" style="background-image: url('https://i.imgur.com/0OAsLwt.jpg');">
+		    <div class="w3-display-middle" style="white-space:nowrap;">
+        		<span class="w3-hover-shadow w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><font size="5">ROBIN MIKHAILOVICH</font></span></div>
+	</div>
+ 
+    <br>
+	<!-- * Layout 2 columns of block -->
+    <div class="w3-row">
+        <!-- Left: Biological Information -->
+    	<div class="w3-col m6 w3-center w3-padding-large bio-info">
+                <p class="bio-title w3-hover-shadow">✦&nbsp;&nbsp;B i o&nbsp;&nbsp;I n f o r m a t i o n</p>
+                <br>
+                <!-- The table goes here -->
+                <div class="table-container">
+                	<table style="width:100%">
+                    	<tbody>
+                        	<tr>
+                                <th>ชื่อเต็ม (TH)</th>
+                        		<td>&nbsp;โรบิน กาบริลโลวา มิไคเลอร์วิช</td> 
+                    		</tr>
+                            <tr>
+                        		<th>ชื่อเต็ม (EN)</th>
+                        		<td>&nbsp;Robin Gabriellova Mikhailovich</td> 
+                    		</tr>
+                            <tr>
+                        		<th>อายุ</th>
+                        		<td>&nbsp;• 13 ปี (ทางกายภาพ)<br>&nbsp;• 88 ปี (ทางเทคนิค)<br></td>
+                    		</tr>
+                    		<tr>
+                        		<th>วันเกิด</th>
+                        		<td>&nbsp;22 มิถุนายน</td>
+                    		</tr>
+                    		<tr>
+                        		<th>เพศ</th>
+                        		<td>&nbsp;หญิง</td>
+                    		</tr>
+                    		<tr>
+                        		<th>สถานที่เกิด</th>
+                        		<td>&nbsp;มอสโก, รัสเซีย</td>
+                    		</tr>
+                            <tr>
+                        		<th>ที่อยู่ปัจจุบัน</th>
+                        		<td>&nbsp;ซานฟรานซิสโก, แคลิฟอร์เนีย, สหรัฐอเมริกา</td>
+                    		</tr>
+                    		<tr>
+                        		<th>ครอบครัว</th>
+                        		<td>&nbsp;• กาบรีลา มิไคเลอร์วิช (เสียชีวิต)<br>• เฮอร์มีส</td>
+                    		</tr>
+                    		<tr>
+                        		<th>ข้อบกพร่องร้ายแรง</th>
+                        		<td>&nbsp;• อาการวูบไม่ทราบที่มา<br>&nbsp;• ความทรงจำขาดหาย<br>&nbsp;• ความทะนงตัว</td>
+                    		</tr>
+                    		<tr>
+                        		<th>โรคประจำตัวมนุษย์กึ่งเทพ</th>
+                        		<td>&nbsp;• ดิสเล็กเซีย (อ่อน)<br>&nbsp;• สมาธิสั้น (อ่อน)<br></td>
+                    		</tr>
+                    		<tr>
+                        		<th>อาวุธ</th>
+                        		<td>&nbsp;**รอการอัพเดท**</td>
+                    		</tr>
+                         </tbody>
+                    </table>
+                </div> <!-- * End of Table -->
+		</div> <!-- * End of Biological Information -->
+        
+    	<!-- * Right: Intro -->
+    	<div class="w3-col m6 w3-center w3-padding-large bio-info">
+            <blockquote>
+            ไง ฉันโรบิน! ..ดิค เกรย์สันหรือเปล่าหรอ? ฉัน ทิม เดรคต่างหากล่ะ เอาเป็นว่ายินดีที่ได้รู้จักนะ จากนี้ไปก็มาสนุกกันเถอะ
+            <span>- Robin, Cabin 11th &#9764;</span>
+          	</blockquote>
+        </div> <!-- * End of Intro -->
+        <!-- * Right: Personality -->
+        <div class="w3-col m6 w3-center w3-padding-large bio-info">
+        	<p class="bio-title w3-hover-shadow">✦ P e r s o n a l i t y</p>
+            <br>
+            <p class ="text-style">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เด็กสาวท่าทางทะมัดทะแมง อัธยาศัยดี มีรอยยิ้มประดับอยู่บนใบหน้าเสมอ ชอบเป็นส่วนหนึ่งของบทสนทนาและไหลตามสถานการณ์เก่ง แม้ปกติจะดูไม่มีพิษมีภัย แต่บางครั้งอาจก็เห็นเธอเปลี่ยนไปสู่บุคลิกที่ต่างไปจากเดิมอย่างสุดขั้วโดยไม่รู้สึกอะไรได้เช่นกัน ท่ามกลางความขัดแย้งเธอคือคนที่ใช้มุกตลกร้ายเพื่อประชดประชันและพร้อมจะตัดสินคนอื่นตลอดเวลา โกหกได้อย่างแนบเนียน มือไว(แน่นอน!) ถ้าหากต้องการเข้ามาพูดคุยละก็.. แนะนำให้เก็บของมีค่าไว้ให้มิดชิดล่ะ : P
+            <br>
+            <span class="highlight-gradient w3-hover-shadow">&nbsp;&#9906;&nbsp;กิจวัตรประจำวัน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;ช่วงเวลาก่อนทานอาหารเช้าจะพบโรบินได้ที่สนามบาสเกตบอลกับแซเทอร์สองสามตน ส่วนในเวลาปกติเธอมักจะไปนั่งเล่นที่ริมทะเลสาบพายเรือแคนูกับคอมพิวเตอร์แล็ปท็อปคู่ใจ
+            <br>
+            <span class="highlight-gradient w3-hover-shadow">&nbsp;Thing makes me happy : )</span>&nbsp;ความภาคภูมิใจในตัวเอง
+            <br>
+            <span class="highlight-gradient w3-hover-shadow">&nbsp;Thing makes me fear : (&nbsp;&nbsp;&nbsp;</span>&nbsp;การสูญเสียความเป็นตัวเอง
+            </p>
+            <br>
+			<img src="https://i.imgur.com/hdZm00g.jpeg" width="401" _height="100" border="0">
+        </div> <!-- * End of Personality -->
+	</div> <!-- * End of Layout 2 columns of block -->
+<br>
+	<!-- * Layout 2 columns of block for likes and dislikes -->
+	<div class="w3-row">
+    <!-- Like -->
+    	<div class="w3-col m6 w3-center w3-padding-large bio-info">
+        	<p class="bio-title w3-hover-shadow">&#9787; Li k e s</p>
+            <br>
+            <p class ="text-style">
+            • มันเผา, กลิ่นขนมอบ
+            <br>
+            • สถานที่หรือเหตุการณ์ใหม่ ๆ
+            <br>
+            • เสียงคลื่นทะเลและทรายนุ่ม ๆ
+            <br>
+            • สีหน้าประหลาดใจและเสียงหัวเราะหลังโดนเธอแกล้ง
+            <br>
+            • หน้าจอคอมพิวเตอร์ที่เต็มไปด้วยภาษาโปรแกรม
+            <br>
+            • หนังหรือซีรีส์ประเภทสงคราม, สยองขวัญ, แฟนตาซี
+            </p>
+        </div> <!-- End of Like -->
+	
+    <!-- Dislike -->
+  		<div class="w3-col m6 w3-center w3-padding-large bio-info">
+        	<p class="bio-title w3-hover-shadow">&#9785; D i s l i k e s</p>
+        	  <br>
+              <p class ="text-style">
+              • ฝันร้ายและอาการวูบ
+              <br>
+              • อากาศร้อนหรือหนาวสุดขั้ว
+              <br>
+              • คนที่รู้ทัน, คนที่ไม่สบตาตอนพูดคุย, และคนที่มืดมน
+              <br>
+              • สัตว์เลื้อยคลาน (โดยเฉพาะงู)
+              <br>
+              • ความอยุติธรรมและความขัดแย้ง
+              </p>
+              <br>
+        </div> <!-- End of Dislike -->
+    </div> <!-- * End of Layout 2 columns of block for likes and dislikes -->
+    
+
+</div>
+</div>
